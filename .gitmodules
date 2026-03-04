@@ -4,3 +4,6 @@
 [submodule "Dashboard-GLPI"]
 	path = Dashboard-GLPI
 	url = https://github.com/Leol-l/Dashboard-Comment
+[submodule "Dashboard-Comment"]
+	path = Dashboard-Comment
+	url = https://github.com/Leol-l/Dashboard-Comment
