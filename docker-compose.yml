@@ -1,0 +1,19 @@
+services:
+  # --- BACKEND (Express) ---
+  api:
+    build: ./API-GLPI
+    container_name: glpi-api
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file: ./API-GLPI/.env
+
+  # --- FRONTEND (Next.js) ---
+  dashboard:
+    build: ./Dashboard-Comment # Ajuste le chemin exact ici
+    container_name: next-dashboard
+    restart: always
+    ports:
+      - "80:3001" # On mappe le port 80 (standard) vers le port 3001 de Next.js
+    depends_on:
+      - api
