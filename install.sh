@@ -39,4 +39,4 @@ sudo docker ps
 
 echo -e "${CYAN}--- Installation terminée ! ---${NC}"
 echo "Accès Dashboard : http://$(hostname -I | awk '{print $1}')"
-echo "Accès API : http://$(hostname -I | awk '{print $1}'):3000"
+echo "Accès API : http://$(api -I | awk '{print $1}'):3000"

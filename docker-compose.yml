@@ -13,7 +13,10 @@ services:
 
   # --- FRONTEND (Next.js) ---
   dashboard:
-    build: ./Dashboard-Comment # Ajuste le chemin exact ici
+    build: 
+      context: ./Dashboard-Comment
+      args:
+        - API_BASE_URL=http://api:3000
     container_name: next-dashboard
     image: next-dashboard:latest
     restart: always
@@ -21,6 +24,6 @@ services:
       - API_BASE_URL=http://api:3000
       - SCHEDULE_INTERVAL=${SCHEDULE_INTERVAL:-30}
     ports:
-      - "80:3001" # On mappe le port 80 (standard) vers le port 3001 de Next.js
+      - "80:3001"
     depends_on:
       - api
