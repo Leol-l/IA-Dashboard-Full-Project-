@@ -3,6 +3,7 @@ services:
   api:
     build: ./API-GLPI
     container_name: glpi-api
+    image: glpi-api:latest
     restart: always
     environment:
       - SCHEDULE_INTERVAL=${SCHEDULE_INTERVAL:-30}
@@ -14,6 +15,7 @@ services:
   dashboard:
     build: ./Dashboard-Comment # Ajuste le chemin exact ici
     container_name: next-dashboard
+    image: next-dashboard:latest
     restart: always
     environment:
       - API_BASE_URL=http://api:3000
